@@ -2,7 +2,7 @@
     <form id="articleForm" action="/article" method="post">
         @csrf
         <script src="/formValidation.js"></script>
-
+@auth
         <p>
             <label>Title</label>
             <input type="text" name="title" />
@@ -24,9 +24,11 @@
             <label>Excerpt</label>
             <input type="text" name="excerpt"></input>
         </p>
+        
         <p>
            <button type="submit">Submit</button>
         </p>
+        @endauth
 @guest
 <a href="/login">Login</a> or <a href="/register">Register as new user</a>.      
 @endguest
